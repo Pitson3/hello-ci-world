@@ -24,8 +24,7 @@ jobs:
       #- checkout
       - run:
           name: "print-ci-hello"
-          command: 
-            - "echo Hello"
+          command: echo Hello
   print-ci-world:
     docker:
       - image: circleci/node:13.8.0
@@ -33,8 +32,7 @@ jobs:
       #- checkout
       - run:
           name: "print-ci-world"
-          command: 
-            - "echo World"
+          command: echo World
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
