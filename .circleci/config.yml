@@ -21,7 +21,7 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      #- checkout
+      - checkout
       - run:
           name: "print-ci-hello"
           command: echo Hello
@@ -29,7 +29,7 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      #- checkout
+      - checkout
       - run:
           name: "print-ci-world"
           command: echo World
