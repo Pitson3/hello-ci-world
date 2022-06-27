@@ -41,16 +41,8 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - say-hello
-  print-hello-workflow:
-    jobs:
-      - print-ci-hello:
-          requires:
-            - say-hello
-    
-  print-world-workflow:
-    jobs:
-      - print-ci-world:
-          requires:
-            - say-hello
-            - print-ci-hello
+      - print-ci-hello
+      - print-ci-world
+         requires:
+          - print-ci-hello
+  
