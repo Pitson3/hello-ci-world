@@ -33,6 +33,14 @@ jobs:
       - run:
           name: "print-ci-world"
           command: echo World
+  print-ci-author:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: "print-ci-author"
+          command: echo $AUTHOR_NAME
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -44,5 +52,6 @@ workflows:
       - print-ci-world:
           requires:
             - print-ci-hello
+      - print-ci-author
     
   
