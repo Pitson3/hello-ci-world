@@ -53,11 +53,6 @@ jobs:
           root: /tmp/workspace/
           paths:
             - output.txt
-      - attach_workspace:
-          root: /tmp/workspace/ !Ref output.txt
-          paths:
-            - target/application.jar
-            - build/*
 
   print_output_file:
     docker:
