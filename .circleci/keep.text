@@ -24,7 +24,8 @@ jobs:
       - checkout
       - run:
           name: "print-ci-hello"
-          command: echo Hello
+          command: 
+            - echo Hello
   print-ci-world:
     docker:
       - image: circleci/node:13.8.0
@@ -32,26 +33,17 @@ jobs:
       - checkout
       - run:
           name: "print-ci-world"
-          command: echo World
-  print-ci-author:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - checkout
-      - run:
-          name: "print-ci-author"
-          command: echo $AUTHOR_NAME
+          command: 
+            - echo World
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   say-hello-workflow:
     jobs:
-      - say-hello
+      
       - print-ci-hello
       - print-ci-world:
-          requires:
-            - print-ci-hello
-      - print-ci-author
-    
+        requires:
+          - print-ci-hello
   
