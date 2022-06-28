@@ -48,9 +48,9 @@ jobs:
       - checkout
       - run:
           name: "save_hello_world_output"
-          command: echo "Hello World" > /tmp/workspace/output.txt
+          command: echo "Hello World" > ~/output.txt
       - persist_to_workspace:
-          root: /tmp/workspace/
+          root: ~/
           paths:
             - output.txt
 
@@ -61,9 +61,9 @@ jobs:
       - checkout
       - run:
           name: "print_output_file"
-          command: cat /tmp/workspace/output.txt
+          command: cat ~/output.txt
       - attach_workspace:
-          at: /tmp/workspace
+          at: ~/
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
