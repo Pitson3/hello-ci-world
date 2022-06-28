@@ -82,7 +82,7 @@ jobs:
       - checkout
       - run:
           name: "failed_job"
-          command: return 1
+          command: exit 1
       - run:
           name: "Error flags"
           command: echo "Hello Error!"
